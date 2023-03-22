@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavigationBottomBar from "../../../../components/NavigationBottomBar";
 import SideBar from "../../../../components/SideBar";
-import { Container, PageTitle, TopNav, IconView } from "../Reports/Reports.style";
+import { Container, PageTitle, TopNav, IconView } from "../Accommodations/Accommodations.style";
 import { View, ScrollView, Button } from 'react-native';
 import { GET, PUT } from '../../../../helpers/httphelper';
 import { InputView, Input, TextArea, Caution } from '../CreateReport/CreateReport.style';

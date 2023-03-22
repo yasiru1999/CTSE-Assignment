@@ -1,6 +1,6 @@
 import NavigationBottomBar from "../../../../components/NavigationBottomBar";
 import SideBar from "../../../../components/SideBar";
-import { Container, PageTitle, TopNav, IconView, SearchView } from "./Reports.style";
+import { Container, PageTitle, TopNav, IconView, SearchView } from "./Accommodations.style";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View, ScrollView } from "react-native";
 import { Searchbar } from 'react-native-paper';
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import ReportCard from "../../components/ReportCard/ReportCard";
 import { GET, POST } from '../../../../helpers/httphelper';
 
-function Reports({ navigation }) {
+function Accommodations({ navigation }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [reports, setReports] = useState([]);
@@ -53,7 +53,7 @@ function Reports({ navigation }) {
       <TopNav>
         <View style={{ width: 30 }}></View>
         <View>
-          <PageTitle>Reports</PageTitle>
+          <PageTitle>Accommodations</PageTitle>
         </View>
         <IconView>
           <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateReport")} />
@@ -82,4 +82,4 @@ function Reports({ navigation }) {
   )
 }
 
-export default Reports;
+export default Accommodations;

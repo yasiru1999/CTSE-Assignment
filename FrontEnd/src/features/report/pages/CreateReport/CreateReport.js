@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, PageTitle, TopNav, IconView } from "../Reports/Reports.style";
+import { Container, PageTitle, TopNav, IconView } from "../Accommodations/Accommodations.style";
 import NavigationBottomBar from "../../../../components/NavigationBottomBar";
 import SideBar from "../../../../components/SideBar";
 import { View, ScrollView, Button } from 'react-native';
