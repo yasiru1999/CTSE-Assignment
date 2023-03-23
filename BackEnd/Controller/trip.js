@@ -40,3 +40,14 @@ exports.getTripDetails = async (req, res) => {
     }
 };
 
+//get one Trip
+exports.getTrip = async (req, res) => {
+    try {
+        const trip = await Trip.findById(req.params.id);
+        res.send({ message: "success", trip });
+    }
+    catch (err) {
+        res.status(400).send(err);
+    }
+}
+
