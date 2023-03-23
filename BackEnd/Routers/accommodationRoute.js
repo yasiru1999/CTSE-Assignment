@@ -1,24 +1,22 @@
 const router = require('express').Router();
+const { addAccommodations,
+        deleteAccommodationById, 
+        getAllAccommodations, 
+        getAllAccommodationsByUserId, 
+        getAccommodationById, 
+        searchAccommodationsByName,
+        searchAccommodationsByNameAndUserId,
+        updateAccommodationById,
+        updateAccommodationStatusById } = require("../Controller/accommodations");
 
-const AddReport = require('../Controller/accommodations');
-const DeleteReportById = require('../Controller/reports/DeleteReportByIdAPI');
-const GetAllReports = require('../Controller/reports/GetAllReportsAPI');
-const GetAllReportsByUserId = require('../Controller/reports/GetAllReportsByUserIdAPI');
-const GetReportById = require('../Controller/reports/GetReportByIdAPI');
-const SearchReportsByName = require('../Controller/reports/SearchReportByNameAPI');
-const UpdateReportById = require('../Controller/reports/UpdateReportByIdAPI');
-const UpdateReportStatusById = require('../Controller/reports/UpdateReportStatusByIdAPI');
-const SearchReportsByNameAndUserId = require('../Controller/reports/SearchReportsByNameAndUserId');
-
-
-router.post('/create', AddReport);
-router.delete('/delete/:id', DeleteReportById);
-router.get('/get/all', GetAllReports);
-router.get('/get/user/:id', GetAllReportsByUserId);
-router.get('/get/report/:id', GetReportById);
-router.put('/update/report/:id', UpdateReportById);
-router.put('/update/status/:id', UpdateReportStatusById);
-router.post('/search', SearchReportsByName);
-router.post('/search/user', SearchReportsByNameAndUserId);
+router.post('/create', addAccommodations);
+router.delete('/delete/:id', deleteAccommodationById);
+router.get('/get/all', getAllAccommodations);
+router.get('/get/user/:id', getAllAccommodationsByUserId);
+router.get('/get/report/:id', getAccommodationById);
+router.put('/update/report/:id', updateAccommodationById);
+router.put('/update/status/:id', updateAccommodationStatusById);
+router.post('/search', searchAccommodationsByName);
+router.post('/search/user', searchAccommodationsByNameAndUserId);
 
 module.exports = router;

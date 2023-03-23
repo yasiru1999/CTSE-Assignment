@@ -7,7 +7,7 @@ exports.addAccommodations = async (req, res) => {
     await accommodation.save();
     res.status(201).json({ status: true, data: accommodation, message: "Successfully Created" });
   } catch (err) {
-    res.status(500).json({ status: false, error: err, message: "Report Creating Failed." });
+    res.status(500).json({ status: false, error: err, message: "Accommodation Creating Failed." });
   }
 };
 
