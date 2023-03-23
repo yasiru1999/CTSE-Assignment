@@ -56,7 +56,7 @@ function Accommodations({ navigation }) {
           <PageTitle>Accommodations</PageTitle>
         </View>
         <IconView>
-          <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateReport")} />
+          <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateAccomadation")} />
         </IconView>
       </TopNav>
       <SearchView>

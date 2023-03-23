@@ -4,7 +4,7 @@ import SideBar from "../../../../components/SideBar";
 import { Container, PageTitle, TopNav, IconView } from "../Accommodations/Accommodations.style";
 import { View, ScrollView, Button } from 'react-native';
 import { GET, PUT } from '../../../../helpers/httphelper';
-import { InputView, Input, TextArea, Caution } from '../CreateReport/CreateReport.style';
+import { InputView, Input, TextArea, Caution } from '../CreateAccomadation/CreateAccomadation.style';
 import { Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 

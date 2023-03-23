@@ -18,7 +18,7 @@ import MyEvent from "./src/features/event/pages/MyEvent";
 import Reports from "./src/features/report/pages/Accommodations/Accommodations";
 import MyAccommodations from "./src/features/report/pages/MyAccommodations/MyAccommodations";
 import EditPost from "./src/features/community/pages/EditPost";
-import CreateReport from "./src/features/report/pages/CreateReport/CreateReport";
+import CreateAccomadation from "./src/features/report/pages/CreateAccomadation/CreateAccomadation";
 import EditReport from "./src/features/report/pages/EditReport/EditReport";
 import EditEvent from "./src/features/event/pages/EditEvent";
 
@@ -58,7 +58,7 @@ export default function App() {
         <Stack.Screen name="editevent" component={EditEvent} />
         <Stack.Screen name="Accommodations" component={Reports} />
         <Stack.Screen name="MyAccommodations" component={MyAccommodations} />
-        <Stack.Screen name="CreateReport" component={CreateReport} />
+        <Stack.Screen name="CreateAccomadation" component={CreateAccomadation} />
         <Stack.Screen name="EditReport" component={EditReport} />
 
       </Stack.Navigator>

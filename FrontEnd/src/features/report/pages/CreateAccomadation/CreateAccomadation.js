@@ -3,13 +3,13 @@ import { Container, PageTitle, TopNav, IconView } from "../Accommodations/Accomm
 import NavigationBottomBar from "../../../../components/NavigationBottomBar";
 import SideBar from "../../../../components/SideBar";
 import { View, ScrollView, Button } from 'react-native';
-import { InputView, Input, TextArea, Caution } from './CreateReport.style';
+import { InputView, Input, TextArea, Caution } from './CreateAccomadation.style';
 import { Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { POST } from '../../../../helpers/httphelper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function CreateReport({ navigation }) {
+function CreateAccomadation({ navigation }) {
 
   const [userId, setUserId] = useState('');
   const [title, setTitle] = useState('');
@@ -60,7 +60,7 @@ function CreateReport({ navigation }) {
     console.log(ob);
     const res = await POST('api/reports/create', ob);
     alert(res.message);
-    navigation.navigate("Reports");
+    navigation.navigate("Accommodations");
   }
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function CreateReport({ navigation }) {
       <TopNav>
         <View style={{ width: 30 }}></View>
         <View>
-          <PageTitle>Create Report</PageTitle>
+          <PageTitle>New Accomadation</PageTitle>
         </View>
         <IconView></IconView>
       </TopNav>
@@ -109,4 +109,4 @@ function CreateReport({ navigation }) {
   )
 }
 
-export default CreateReport;
+export default CreateAccomadation;
