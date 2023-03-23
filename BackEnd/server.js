@@ -12,7 +12,7 @@ const userRouter = require("./Routers/user");
 const tripRouter = require("./Routers/trip");
 const PostRouter = require("./Routers/community");
 const EventRouter = require("./Routers/event");
-const ReportRouter = require('./Routers/reports/ReportRoute');
+const ReportRouter = require('./Routers/accommodationRoute');
 
 
 

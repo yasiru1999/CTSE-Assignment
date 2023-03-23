@@ -11,5 +11,5 @@ const accommodationSchema = new mongoose.Schema({
   date: { type: String, required: true },
 });
 
-const accommodationtModel = mongoose.model('Accommodation', accommodationSchema);
-module.exports = accommodationtModel;
+const accommodationModel = mongoose.model('Accommodation', accommodationSchema);
+module.exports = accommodationModel;
