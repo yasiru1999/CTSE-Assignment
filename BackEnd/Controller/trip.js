@@ -89,3 +89,12 @@ exports.deleteTrip = async (req, res) => {
         res.status(400).send(err);
     }
 }
+
+exports.SearchTripsByName = async (req, res) => {
+    try {
+      const trip = await Trip.find({ destination: req.params.destination });
+      res.send({ message: "success", trip });
+    } catch (err) {
+      res.status(400).send(err);
+    }
+  };
