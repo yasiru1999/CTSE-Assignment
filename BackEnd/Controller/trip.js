@@ -29,3 +29,14 @@ exports.addTrip = async (req, res) => {
     }
 };
 
+//get all Trip
+exports.getTripDetails = async (req, res) => {
+    try {
+        const trip = await Trip.find();
+        res.send({ message: "success", trip });
+    }
+    catch (err) {
+        res.status(400).send(err);
+    }
+};
+
