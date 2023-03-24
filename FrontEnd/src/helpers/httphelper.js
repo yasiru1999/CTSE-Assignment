@@ -16,9 +16,9 @@ export const GET = async (path) => {
       TokenExpired();
     } else {
       console.log(error);
-      return error.response.data;
+      return error;
     }
-    return error.response.data;
+    return error;
   }
 };
 
