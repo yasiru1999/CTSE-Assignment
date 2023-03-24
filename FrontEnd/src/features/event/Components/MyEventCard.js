@@ -48,14 +48,15 @@ function MyEventCard({ item, del, navmethod, type = false }) {
 
         {!type && (
           <View style={styles.flexCon}>
-            <View style={styles.upButton} onPress={() => navmethod(item)}>
-              <Text style={styles.Txt} onPress={() => navmethod(item)}>
+            <View style={styles.upButton} onPress={() => del(item)}>
+              <Text style={styles.Txt} onPress={() => del(item)}>
                 Edit
               </Text>
             </View>
-
-            <View style={styles.deButton} onPress={() => del(item._id)}>
-              <Text style={styles.Txt1}>Delete</Text>
+            <View style={styles.deButton} onPress={() => navmethod(item)}>
+              <Text style={styles.Txt} onPress={() => navmethod(item)}>
+         Delete
+              </Text>
             </View>
           </View>
         )}
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   deButton: {
-    backgroundColor: "white",
+    backgroundColor: "red",
     //add border
     borderColor: "#FF0606",
     borderWidth: 2,
