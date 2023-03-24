@@ -10,6 +10,8 @@ import TripEdit from "./src/features/trip/TripEdit";
 import TripCreate from "./src/features/trip/TripCreate";
 import TripUserView from "./src/features/trip/TripUserView";
 import HomeWelcome from "./src/features/home/HomeWelcome";
+import AddTransportation from "./src/features/transportation/pages/AddTransportation";
+import Tranportation from "./src/features/transportation/pages/Transportation";
 
 
 
@@ -36,6 +38,8 @@ export default function App() {
         <Stack.Screen name="TripEdit" component={TripEdit} />
         <Stack.Screen name="TripCreate" component={TripCreate} />
         <Stack.Screen name="TripUserView" component={TripUserView} />
+        <Stack.Screen name="Addtransportation" component={AddTransportation} />
+        <Stack.Screen name="tranportation" component={Tranportation} />
       </Stack.Navigator>
     </NavigationContainer >
 
