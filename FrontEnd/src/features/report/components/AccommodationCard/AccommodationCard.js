@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, Card, Button } from '@rneui/themed';
-import { Location, Title, ButtonView } from './ReportCard.style';
+import { Location, Title, ButtonView } from './AccommodationCard.style';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { View } from 'react-native';
 
-function ReportCard({ data, isOwner, deleteFunc, navigation }) {
+function AccommodationCard({ data, isOwner, deleteFunc, navigation }) {
 
   return (
     <Card>
@@ -78,4 +78,4 @@ function ReportCard({ data, isOwner, deleteFunc, navigation }) {
   )
 }
 
-export default ReportCard;
+export default AccommodationCard;

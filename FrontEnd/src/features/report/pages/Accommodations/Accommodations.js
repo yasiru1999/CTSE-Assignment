@@ -5,18 +5,18 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View, ScrollView } from "react-native";
 import { Searchbar } from 'react-native-paper';
 import { useEffect, useState } from "react";
-import ReportCard from "../../components/ReportCard/ReportCard";
+import ReportCard from "../../components/AccommodationCard/AccommodationCard";
 import { GET, POST } from '../../../../helpers/httphelper';
 
 function Accommodations({ navigation }) {
 
   const [searchQuery, setSearchQuery] = useState('');
-  const [reports, setReports] = useState([]);
+  const [accommodations, setAccommodations] = useState([]);
 
-  const handleFetchAllReports = async () => {
+  const handleFetchAllAccommodations = async () => {
     try {
       const res = await GET('api/reports/get/all');
-      setReports(res.data);
+      setAccommodations(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -25,13 +25,13 @@ function Accommodations({ navigation }) {
   const handleSearchByName = async () => {
     try {
       if (searchQuery === '') {
-        handleFetchAllReports();
+        handleFetchAllAccommodations();
       } else {
         let ob = {
           title: searchQuery
         }
         const res = await POST('api/reports/search', ob);
-        setReports(res.data);
+        setAccommodations(res.data);
         console.log(res)
       }
     } catch (err) {
@@ -40,7 +40,7 @@ function Accommodations({ navigation }) {
   }
 
   useEffect(() => {
-    handleFetchAllReports();
+    handleFetchAllAccommodations();
   }, []);
 
   useEffect(() => {
@@ -68,10 +68,10 @@ function Accommodations({ navigation }) {
         />
       </SearchView>
       <ScrollView style={{ marginBottom: "20%" }}>
-        {reports?.map((report, index) => (
+        {accommodations?.map((accommodation, index) => (
           <ReportCard
             key={index}
-            data={report}
+            data={accommodation}
             isOwner={false}
             navigation={navigation}
           />

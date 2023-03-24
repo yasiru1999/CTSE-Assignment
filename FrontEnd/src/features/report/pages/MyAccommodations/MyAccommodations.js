@@ -6,11 +6,11 @@ import { View, ScrollView } from "react-native";
 import { useIsFocused } from '@react-navigation/native';
 import { Searchbar } from 'react-native-paper';
 import { useEffect, useState } from "react";
-import ReportCard from "../../components/ReportCard/ReportCard";
+import ReportCard from "../../components/AccommodationCard/AccommodationCard";
 import { GET, POST, DELETE } from '../../../../helpers/httphelper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function MyAccommodations({ navigation }) {
+function MyReports({ navigation }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [reports, setReports] = useState([]);
@@ -85,7 +85,7 @@ function MyAccommodations({ navigation }) {
       <TopNav>
         <View style={{ width: 30 }}></View>
         <View>
-          <PageTitle>Accommodations</PageTitle>
+          <PageTitle>My Reports</PageTitle>
         </View>
         <IconView>
           <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateAccomadation")} />
@@ -115,4 +115,4 @@ function MyAccommodations({ navigation }) {
   )
 }
 
-export default MyAccommodations;
+export default MyReports;
