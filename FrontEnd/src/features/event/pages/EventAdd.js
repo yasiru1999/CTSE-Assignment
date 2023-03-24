@@ -38,12 +38,12 @@ import DatePicker from "@react-native-community/datetimepicker";
 import NavigationBottomBar from "../../../components/NavigationBottomBar";
 import SideBar from "../../../components/SideBar";
 
-function AddEvent({ navigation }) {
+function EventAdd({ navigation }) {
   const [uid, setuid] = useState("");
   const [title, settitle] = useState("");
   const [date, setdate] = useState("09-10-2020");
   const [venue, setvenue] = useState("");
-  const [time, settime] = useState("");
+  const [ participant, setparticipant] = useState("");
   const [description, setdescription] = useState("");
   const [img, setImg] = useState("");
   const path = "http://10.0.2.2:8070";
@@ -87,7 +87,7 @@ function AddEvent({ navigation }) {
       return;
     }
 
-    if (time === "") {
+    if ( participant === "") {
       alert("Please enter the participants");
       return;
     }
@@ -103,7 +103,7 @@ function AddEvent({ navigation }) {
       date,
       img,
       venue,
-      time,
+      participant,
       description,
     };
 
@@ -159,7 +159,7 @@ function AddEvent({ navigation }) {
       >
         <View style={styles.Border}>
           <InputContainer>
-            <EventImage source={require("../../../../assets/createEv.png")} />
+            <EventImage source={require("../../../../assets/evt.jpg")} />
 
             <InputView>
               <Text>Event Title</Text>
@@ -197,7 +197,7 @@ function AddEvent({ navigation }) {
               <Text>Participants</Text>
               <Input
                 placeholder={"Enter the number of participants"}
-                onChangeText={(newtext) => settime(newtext)}
+                onChangeText={(newtext) => setparticipant(newtext)}
               />
             </InputView>
 
@@ -224,7 +224,7 @@ function AddEvent({ navigation }) {
   );
 }
 
-export default AddEvent;
+export default EventAdd;
 
 const styles = StyleSheet.create({
   container: {
