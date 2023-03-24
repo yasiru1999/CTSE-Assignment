@@ -87,6 +87,7 @@ function TripAdd({ navigation }) {
             marginTop: 5,
             width: 25,
             height: 40,
+            backgroundColor:"red"
           }}
           source={require("../../../assets/back.png")}
         />
@@ -139,7 +140,7 @@ function TripAdd({ navigation }) {
         <Text>Destination</Text>
         <TextInput
           style={{
-            height: 80,
+            height: 40,
             width: "100%",
             borderWidth: 1,
             borderRadius: 10,
