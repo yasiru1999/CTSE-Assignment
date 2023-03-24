@@ -32,14 +32,14 @@ import { Picker } from "@react-native-picker/picker";
 import * as ImagePicker from "expo-image-picker";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-function EditEvent({ route, navigation }) {
+function EventEdit({ route, navigation }) {
   const { event } = route.params;
   const [uid, setuid] = useState("");
   const [eid, seteid] = useState("");
   const [title, settitle] = useState("");
   const [date, setdate] = useState("");
   const [venue, setvenue] = useState("");
-  const [time, settime] = useState("");
+  const [ participant, setparticipant] = useState("");
   const [description, setdescription] = useState("");
   const path = "http://10.0.2.2:8070";
 
@@ -52,7 +52,7 @@ function EditEvent({ route, navigation }) {
     seteid(event._id);
     settitle(event.title);
     setdescription(event.description);
-    settime(event.time);
+    setparticipant(event. participant);
     setvenue(event.venue);
   };
   const getData = async () => {
@@ -77,7 +77,7 @@ function EditEvent({ route, navigation }) {
       return;
     }
 
-    if (time === "") {
+    if ( participant === "") {
       alert("Please enter the number of participants");
       return;
     }
@@ -92,7 +92,7 @@ function EditEvent({ route, navigation }) {
       title,
       date,
       venue,
-      time,
+      participant,
       description,
     };
 
@@ -161,9 +161,9 @@ function EditEvent({ route, navigation }) {
             <InputView>
               <Text>Participants</Text>
               <Input
-                placeholder={"Enter the time"}
-                onChangeText={(newtext) => settime(newtext)}
-                value={time}
+                placeholder={"Enter the  participant"}
+                onChangeText={(newtext) => setparticipant(newtext)}
+                value={ participant}
               />
             </InputView>
 
@@ -190,7 +190,7 @@ function EditEvent({ route, navigation }) {
   );
 }
 
-export default EditEvent;
+export default EventEdit;
 
 const styles = StyleSheet.create({
   ButtonAdd: {
