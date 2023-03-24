@@ -8,22 +8,22 @@ import { InputView, Input, TextArea, Caution } from '../CreateAccomadation/Creat
 import { Title } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-function EditReport({ navigation, route }) {
+function EditAccommodation({ navigation, route }) {
 
   const [user, setUser] = useState('');
-  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
-  const [reportId, setReportId] = useState('');
+  const [accId, setaccId] = useState('');
 
 
   const handleFetchReportById = async () => {
     try {
-      const res = await GET(`api/reports/get/report/${route.params.id}`);
-      setReportId(res.data._id);
+      const res = await GET(`api/accommodations/get/report/${route.params.id}`);
+      setaccId(res.data._id);
       setUser(res.data.user);
-      setTitle(res.data.title);
+      setName(res.data.name);
       setLocation(res.data.location);
       setDescription(res.data.description);
       setImage(res.data.image);
@@ -34,8 +34,8 @@ function EditReport({ navigation, route }) {
 
   const handleUpdateData = async () => {
 
-    if (title === '') {
-      alert("Please enter a title");
+    if (name === '') {
+      alert("Please enter a name");
       return
     }
     if (location === '') {
@@ -53,7 +53,7 @@ function EditReport({ navigation, route }) {
 
     const ob = {
       user,
-      title,
+      name,
       location,
       description,
       image,
@@ -61,9 +61,9 @@ function EditReport({ navigation, route }) {
       date: new Date().toISOString().slice(0, 10)
     }
     console.log(ob);
-    const res = await PUT(`api/reports/update/report/${reportId}`, ob);
+    const res = await PUT(`api/accommodations/update/report/${accId}`, ob);
     alert(res.message);
-    navigation.navigate("MyReports");
+    navigation.navigate("MyAccommodations");
   }
 
   useEffect(() => {
@@ -82,8 +82,8 @@ function EditReport({ navigation, route }) {
       </TopNav>
       <ScrollView style={{ marginBottom: "20%" }}>
         <InputView>
-          <Title>Title</Title>
-          <Input placeholder={"Enter Report Title"} onChangeText={value => setTitle(value)} value={title} />
+          <Title>Name</Title>
+          <Input placeholder={"Enter Report Name"} onChangeText={value => setName(value)} value={name} />
         </InputView>
         <InputView>
           <Title>Location</Title>
@@ -110,4 +110,4 @@ function EditReport({ navigation, route }) {
   )
 }
 
-export default EditReport;
+export default EditAccommodation;

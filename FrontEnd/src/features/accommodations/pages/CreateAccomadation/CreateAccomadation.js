@@ -12,7 +12,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 function CreateAccomadation({ navigation }) {
 
   const [userId, setUserId] = useState('');
-  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
@@ -31,8 +31,8 @@ function CreateAccomadation({ navigation }) {
 
   const handleSubmitData = async () => {
 
-    if (title === '') {
-      alert("Please enter a title");
+    if (name === '') {
+      alert("Please enter a Name");
       return
     }
     if (location === '') {
@@ -44,13 +44,13 @@ function CreateAccomadation({ navigation }) {
       return
     }
     if (image === '') {
-      alert("Please enter the description");
+      alert("Please enter the image Link");
       return
     }
 
     const ob = {
       user: userId,
-      title,
+      name,
       location,
       description,
       image,
@@ -58,7 +58,7 @@ function CreateAccomadation({ navigation }) {
       date: new Date().toISOString().slice(0, 10)
     }
     console.log(ob);
-    const res = await POST('api/reports/create', ob);
+    const res = await POST('api/accommodations/create', ob);
     alert(res.message);
     navigation.navigate("Accommodations");
   }
@@ -80,8 +80,8 @@ function CreateAccomadation({ navigation }) {
       </TopNav>
       <ScrollView style={{ marginBottom: "20%" }}>
         <InputView>
-          <Title>Title</Title>
-          <Input placeholder={"Enter Report Title"} onChangeText={value => setTitle(value)} />
+          <Title>Name</Title>
+          <Input placeholder={"Enter Accommodation Name"} onChangeText={value => setName(value)} />
         </InputView>
         <InputView>
           <Title>Location</Title>
@@ -89,7 +89,7 @@ function CreateAccomadation({ navigation }) {
         </InputView>
         <InputView>
           <Title>Description</Title>
-          <TextArea placeholder={"Enter Report Description"} onChangeText={value => setDescription(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <TextArea placeholder={"Enter Description(feedback/price/...)"} onChangeText={value => setDescription(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
         </InputView>
         <InputView>
           <Title>Image</Title>
@@ -98,7 +98,7 @@ function CreateAccomadation({ navigation }) {
 
         <Caution>
           <Icon name="exclamation-circle" size={16} color="#42a1f5" />
-          By Clicking Create You Agree to take full resposibility for this report and are under the privacy & policy of this and government law.
+          By Clicking Create You Agree to take full resposibility for this place and are under the privacy & policy of this and government law.
         </Caution>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Button title="Create" color="#42a1f5" onPress={() => { handleSubmitData() }} />

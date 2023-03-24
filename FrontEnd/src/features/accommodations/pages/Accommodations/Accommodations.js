@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View, ScrollView } from "react-native";
 import { Searchbar } from 'react-native-paper';
 import { useEffect, useState } from "react";
-import ReportCard from "../../components/AccommodationCard/AccommodationCard";
+import AccommodationCard from "../../components/AccommodationCard/AccommodationCard";
 import { GET, POST } from '../../../../helpers/httphelper';
 
 function Accommodations({ navigation }) {
@@ -15,7 +15,7 @@ function Accommodations({ navigation }) {
 
   const handleFetchAllAccommodations = async () => {
     try {
-      const res = await GET('api/reports/get/all');
+      const res = await GET('api/accommodations/get/all');
       setAccommodations(res.data);
     } catch (err) {
       console.log(err);
@@ -30,7 +30,7 @@ function Accommodations({ navigation }) {
         let ob = {
           title: searchQuery
         }
-        const res = await POST('api/reports/search', ob);
+        const res = await POST('api/accommodations/search', ob);
         setAccommodations(res.data);
         console.log(res)
       }
@@ -67,9 +67,9 @@ function Accommodations({ navigation }) {
           style={{ width: "90%" }}
         />
       </SearchView>
-      <ScrollView style={{ marginBottom: "20%" }}>
+      <ScrollView style={{ marginBottom: "20%",width: "90%" }}>
         {accommodations?.map((accommodation, index) => (
-          <ReportCard
+          <AccommodationCard
             key={index}
             data={accommodation}
             isOwner={false}

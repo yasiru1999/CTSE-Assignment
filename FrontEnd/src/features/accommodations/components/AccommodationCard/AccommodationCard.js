@@ -8,7 +8,7 @@ function AccommodationCard({ data, isOwner, deleteFunc, navigation }) {
 
   return (
     <Card>
-      <Title>{data.title}</Title>
+      <Title>{data.name}</Title>
       <Card.Divider />
       <Card.Image
         style={{ padding: 0 }}
@@ -47,7 +47,7 @@ function AccommodationCard({ data, isOwner, deleteFunc, navigation }) {
               marginBottom: 0,
             }}
             title="Edit"
-            onPress={() => navigation.navigate('EditReport', { id: data._id })}
+            onPress={() => navigation.navigate('EditAccommodation', { id: data._id })}
           />
         </View>
         <View style={{ width: "50%", margin: 10 }}>

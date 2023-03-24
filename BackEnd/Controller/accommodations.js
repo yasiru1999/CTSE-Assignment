@@ -53,7 +53,7 @@ exports.getAccommodationById = async (req, res) => {
 
 exports.searchAccommodationsByName = async (req, res) => {
   try {
-    const accommodations = await Accommodations.find({ title: { $regex: `${req.body.name}` } });
+    const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` } });
     if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
     res.status(200).json({ status: true, data: accommodations, message: "Data Fetched Successfully" });
   } catch (err) {
@@ -63,9 +63,9 @@ exports.searchAccommodationsByName = async (req, res) => {
 
 exports.searchAccommodationsByNameAndUserId = async (req, res) => {
   try {
-    const accommodations = await Accommodations.find({ title: { $regex: `${req.body.name}` }, user: req.body.user });
+    const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
     if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
-    res.status(200).json({ status: true, data: accommodations, message: "Data Fetched Successfully" });
+    res.status(200).json({ status: true, data: accommodations, message: "Data not Fetched Successfully" });
   } catch (err) {
     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
   }

@@ -3,7 +3,7 @@ import axios from "axios";
 import { TokenExpired } from "./logout";
 
 export const GET = async (path) => {
-  path = `http://10.0.2.2:8070/${path}`;
+  path = `http://10.0.2.2:8090/${path}`;
   try {
     const response = await axios.get(path, {
       headers: {
@@ -23,7 +23,7 @@ export const GET = async (path) => {
 };
 
 export const POST = async (path, data) => {
-  path = `http://10.0.2.2:8070/${path}`;
+  path = `http://10.0.2.2:8090/${path}`;
   try {
     const response = await axios.post(path, data, {
       headers: {
@@ -43,7 +43,7 @@ export const POST = async (path, data) => {
 };
 
 export const DELETE = async (path, data) => {
-  path = `http://10.0.2.2:8070/${path}`;
+  path = `http://10.0.2.2:8090/${path}`;
   try {
     const response = await axios.delete(path, {
       headers: {
@@ -64,7 +64,7 @@ export const DELETE = async (path, data) => {
 };
 
 export const PUT = async (path, data) => {
-  path = `http://10.0.2.2:8070/${path}`;
+  path = `http://10.0.2.2:8090/${path}`;
   try {
     const response = await axios.put(path, data, {
       headers: {

@@ -15,11 +15,11 @@ import AddPost from "./src/features/community/pages/AddPost";
 import MyPost from "./src/features/community/pages/MyPost";
 import AllEvent from "./src/features/event/pages/AllEvent";
 import MyEvent from "./src/features/event/pages/MyEvent";
-import Reports from "./src/features/report/pages/Accommodations/Accommodations";
-import MyAccommodations from "./src/features/report/pages/MyAccommodations/MyAccommodations";
+import Accommodations from "./src/features/accommodations/pages/Accommodations/Accommodations";
+import MyAccommodations from "./src/features/accommodations/pages/MyAccommodations/MyAccommodations";
 import EditPost from "./src/features/community/pages/EditPost";
-import CreateAccomadation from "./src/features/report/pages/CreateAccomadation/CreateAccomadation";
-import EditReport from "./src/features/report/pages/EditReport/EditReport";
+import CreateAccomadation from "./src/features/accommodations/pages/CreateAccomadation/CreateAccomadation";
+import EditAccommodation from "./src/features/accommodations/pages/EditAccommodation/EditAccommodation";
 import EditEvent from "./src/features/event/pages/EditEvent";
 
 
@@ -56,10 +56,10 @@ export default function App() {
         <Stack.Screen name="myevent" component={MyEvent} />
         <Stack.Screen name="editpost" component={EditPost} />
         <Stack.Screen name="editevent" component={EditEvent} />
-        <Stack.Screen name="Accommodations" component={Reports} />
+        <Stack.Screen name="Accommodations" component={Accommodations} />
         <Stack.Screen name="MyAccommodations" component={MyAccommodations} />
         <Stack.Screen name="CreateAccomadation" component={CreateAccomadation} />
-        <Stack.Screen name="EditReport" component={EditReport} />
+        <Stack.Screen name="EditAccommodation" component={EditAccommodation} />
 
       </Stack.Navigator>
     </NavigationContainer >

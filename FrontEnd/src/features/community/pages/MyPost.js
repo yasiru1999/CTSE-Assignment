@@ -6,7 +6,6 @@ import { Back2, Container, ContentWrapper, ImageWrapper } from '../styles/all';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Searchbar } from 'react-native-paper';
 import { HeadText, NoPost, NText } from '../styles/mypost';
-import { SearchView } from '../../report/pages/Accommodations/Accommodations.style';
 import NavigationBottomBar from '../../../components/NavigationBottomBar'
 import SideBar from '../../../components/SideBar'
 

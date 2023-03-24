@@ -6,11 +6,11 @@ import { View, ScrollView } from "react-native";
 import { useIsFocused } from '@react-navigation/native';
 import { Searchbar } from 'react-native-paper';
 import { useEffect, useState } from "react";
-import ReportCard from "../../components/AccommodationCard/AccommodationCard";
+import AccommodationCard from "../../components/AccommodationCard/AccommodationCard";
 import { GET, POST, DELETE } from '../../../../helpers/httphelper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function MyReports({ navigation }) {
+function MyAccommodations({ navigation }) {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [reports, setReports] = useState([]);
@@ -19,7 +19,7 @@ function MyReports({ navigation }) {
 
   const handleDeleteReportById = async (id) => {
     try {
-      const res = await DELETE(`api/reports/delete/${id}`, {});
+      const res = await DELETE(`api/accommodations/delete/${id}`, {});
       alert(res.message);
       handleFetchAllReportsById();
     } catch (err) {
@@ -30,7 +30,7 @@ function MyReports({ navigation }) {
   const handleFetchAllReportsById = async () => {
     try {
       if (userId !== '') {
-        const res = await GET(`api/reports/get/user/${userId}`);
+        const res = await GET(`api/accommodations/get/user/${userId}`);
         setReports(res.data);
       }
     } catch (err) {
@@ -56,10 +56,10 @@ function MyReports({ navigation }) {
         handleFetchAllReportsById();
       } else {
         let ob = {
-          title: searchQuery,
+          name: searchQuery,
           user: userId
         }
-        const res = await POST('api/reports/search/user', ob);
+        const res = await POST('api/accommodations/search/user', ob);
         setReports(res.data);
       }
     } catch (err) {
@@ -85,7 +85,7 @@ function MyReports({ navigation }) {
       <TopNav>
         <View style={{ width: 30 }}></View>
         <View>
-          <PageTitle>My Reports</PageTitle>
+          <PageTitle>Accommodations</PageTitle>
         </View>
         <IconView>
           <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateAccomadation")} />
@@ -101,7 +101,7 @@ function MyReports({ navigation }) {
       </SearchView>
       <ScrollView style={{ marginBottom: "20%" }}>
         {reports?.map((report, index) => (
-          <ReportCard
+          <AccommodationCard
             key={index}
             data={report}
             isOwner={true}
@@ -115,4 +115,4 @@ function MyReports({ navigation }) {
   )
 }
 
-export default MyReports;
+export default MyAccommodations;
