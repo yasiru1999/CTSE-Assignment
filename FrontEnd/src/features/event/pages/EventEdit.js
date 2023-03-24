@@ -138,7 +138,7 @@ function EventEdit({ route, navigation }) {
       <ScrollView>
         <View style={styles.Border}>
           <InputContainer>
-            <EventImage source={require("../../../../assets/createEv.png")} />
+            <EventImage source={require("../../../../assets/evt.jpg")} />
 
             <InputView>
               <Text>Event Title</Text>
