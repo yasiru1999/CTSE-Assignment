@@ -97,7 +97,7 @@ function MyEvent({ navigation }) {
       <FlatList
         data={data}
         renderItem={({ item }) => (
-          <MyEventCard item={item} del={clickDelete} navmethod={updateMethod} />
+          <MyEventCard item={item} del={updateMethod} navmethod={clickDelete} />
         )}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
