@@ -40,7 +40,7 @@ function MyEventCard({ item, del, navmethod, type = false }) {
           <Text style={styles.date}>Date : </Text> {item.date}
         </Text>
         <Text style={styles.sub1}>
-          <Text style={styles.date}>Participants : </Text> {item.time}
+          <Text style={styles.date}>Participants : </Text> {item.participant}
         </Text>
         <Text style={styles.sub1}>
           <Text style={styles.date}>Location : </Text> {item.venue}
