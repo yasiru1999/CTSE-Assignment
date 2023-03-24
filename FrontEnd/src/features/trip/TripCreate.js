@@ -53,7 +53,7 @@ function TripViewCreator({ navigation, route }) {
         />
       </Pressable>
 
-      <Text style={styles.title}>view</Text>
+      <Text style={styles.title}>View Trip Details</Text>
       {/* Content Here */}
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -67,6 +67,7 @@ function TripViewCreator({ navigation, route }) {
             fontSize: 35,
             fontWeight: "bold",
             marginBottom: 10,
+            marginTop:50,
           }}
         >
           {trip.title}
@@ -82,11 +83,11 @@ function TripViewCreator({ navigation, route }) {
             backgroundColor: "#82C7EE",
           }}
         />
-        <Text>#{trip.name}</Text>
-        <Text># {trip?.status}</Text>
-        <Text># {trip?.dates}</Text>
-        <Text># {trip?.budget}</Text>
-        <Text>#Description</Text>
+        <Text>Trip Title : {trip.name}</Text>
+        <Text>Status : {trip?.status}</Text>
+        <Text>Number of Dates : {trip?.dates}</Text>
+        <Text>Budget : {trip?.budget}</Text>
+        <Text>Activities :{trip?.activities}</Text>
         <Text
           style={{
             fontSize: 15,
@@ -96,18 +97,10 @@ function TripViewCreator({ navigation, route }) {
             marginBottom: "10%",
           }}
         >
-          {trip?.destination}
+          Destination : {trip?.destination}
         </Text>
-        <Text
-          style={{
-            fontSize: 15,
-            bottom: 25,
-            right: 10,
-            position: "absolute",
-          }}
-        >
-          {trip?.activities}
-        </Text>
+        
+       
         <Text
           style={{
             fontSize: 15,
@@ -116,7 +109,7 @@ function TripViewCreator({ navigation, route }) {
             position: "absolute",
           }}
         >
-          {(trip?.date).split("T")[0]}
+         Last Updated :  {(trip?.date).split("T")[0]}
         </Text>
 
         <Pressable
