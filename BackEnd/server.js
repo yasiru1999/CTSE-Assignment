@@ -8,7 +8,7 @@ const URL = process.env.MONGODB_URL;
 const cors = require("cors");
 
 const userRouter = require("./Routers/user");
-
+const EventRouter = require("./Routers/event");
 
 
 
@@ -22,6 +22,7 @@ mongoose.connect(URL, (err) => {
 });
 
 app.use("/api/user", userRouter); //user login & Registration
+app.use("/api/event", EventRouter);
 
 
 //! create server with port number
