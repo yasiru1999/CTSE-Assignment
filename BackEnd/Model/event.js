@@ -15,7 +15,7 @@ const EventSchema = new Schema({
         type: String,
     },
 
-    time: {
+    participant: {
         type: String,
     },
 

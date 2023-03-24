@@ -1,42 +1,58 @@
-const mongoose = require("mongoose");
-var ObjectId = require("bson").ObjectId;
-const Schema = mongoose.Schema;
+const Event = require("../Model/Event");
 
-const EventSchema = new Schema({
-    title: {
-        type: String,
-    },
-    date: {
-        type: String,
-    },
+exports.addEvent = async (req, res) => {
+    try {
+        const event = new Event(req.body)
+        await event.save()
+        res.send(event)
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
 
-
-    venue: {
-        type: String,
-    },
-
-    participant: {
-        type: String,
-    },
-
-
-    description: {
-        type: String,
-    },
+exports.editEvent = async (req, res) => {
+    try {
+        const { eid } = req.body
+        const { obj } = req.body
+        const event = await Event.findByIdAndUpdate(eid, obj)
+        res.send(event)
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
 
 
+exports.getAllEvent = async (req, res) => {
+    try {
 
-    img: {
-        type: String
-    },
+        const events = await Event.find()
+        res.send(events)
 
-    uid: {
-        type: ObjectId,
-        ref: "User"
-    },
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
 
-});
 
-const Event = mongoose.model("event", EventSchema);
 
-module.exports = Event;
+exports.getMyEvents = async (req, res) => {
+    try {
+        const { uid } = req.body
+        const events = await Event.find({ uid })
+        res.send(events)
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
+
+
+exports.deleteEvent = async (req, res) => {
+    try {
+        const { eid } = req.body
+        await Event.findByIdAndDelete(eid)
+        res.send("success")
+
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
