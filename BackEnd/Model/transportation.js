@@ -25,6 +25,9 @@ const tranportationSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    Image: {
+        type: String,
+    },
     uid: {
         type: ObjectId,
         ref: "User"
