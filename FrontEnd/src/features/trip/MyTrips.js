@@ -11,11 +11,11 @@ import {
 } from "react-native";
 import NavigationBottomBar from "../../components/NavigationBottomBar";
 import SideBar from "../../components/SideBar";
-import { POST } from "../../helpers/httphelper";
+import { GET,POST } from "../../helpers/httphelper";
 import { Searchbar } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useIsFocused } from "@react-navigation/native";
-import { SearchView } from "../report/pages/Reports/Reports.style";
+import { SearchView } from "./styles/trip.style";
 
 function MyTrip({ navigation }) {
   const [uid, setUid] = useState("");
@@ -41,15 +41,17 @@ function MyTrip({ navigation }) {
     }
   };
 
-  const handleSearchByName = async () => {
+  const handleSearchByName = async (destination) => {
+    console.log(destination)
     try {
-      if (trip.destination === "") {
+      if (destination === "") {
         getData();
       } else {
-        let ob = {
-          destination: trip.destination,
-        };
-        const res = await GET(`api/trip/search/${destination}`, ob);
+        // let ob = {
+        //   destination: trip.destination,k
+        // };
+        console.log(`api/trip/search/${destination}`)
+        const res = await GET(`api/trip/search/${destination}`);
         setTrip(res.trip);
         console.log(res);
       }
@@ -77,6 +79,7 @@ function MyTrip({ navigation }) {
           style={{
             width: 40,
             height: 40,
+           
           }}
           source={require("../../../assets/add.png")}
         />
@@ -86,8 +89,8 @@ function MyTrip({ navigation }) {
         <Searchbar
           placeholder="Search"
           style={{ width: "90%" }}
-          onChangeText={handleSearchByName}
-          value={trip.destination}
+          onChangeText={(data)=>{handleSearchByName(data)}}
+          // value={trip.destination}
         />
       </SearchView>
       {/* Content Here */}
