@@ -26,7 +26,9 @@ mongoose.connect(URL, (err) => {
 app.use("/api/user", userRouter); //user login & Registration
 app.use("/api/event", EventRouter);
 
-
+app.use("/api/trip", tripRouter); //trip
+app.use("/api/transportation", transportationRouter);
+app.use("/api/accommodations", AccommodationRouter); 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
   console.log(`service is up and running on port ${PORT}`);
