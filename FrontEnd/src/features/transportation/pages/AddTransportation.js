@@ -54,6 +54,7 @@ function AddTransportation({ navigation }) {
       return
     }
 
+    //Add transportations
     const ob = {
       user: userId,
       title,
