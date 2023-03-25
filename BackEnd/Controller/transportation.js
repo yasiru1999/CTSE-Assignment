@@ -11,6 +11,7 @@ exports.addTransportation = async (req, res) => {
   }
 };
 
+//Delete Transportation
 exports.deleteTransportationById = async (req, res) => {
   try {
     const transportation = await Transportation.findByIdAndDelete(req.params.id);
@@ -20,6 +21,7 @@ exports.deleteTransportationById = async (req, res) => {
   }
 };
 
+//Get ALL Transportation
 exports.getAllTransportations = async (req, res) => {
   try {
     const transportation = await Transportation.find();
@@ -31,6 +33,7 @@ exports.getAllTransportations = async (req, res) => {
   }
 };
 
+//Get Transportation by user ID
 exports.getAllTransportationsByUserId = async (req, res) => {
   try {
     const transportation = await Transportation.find({ user: req.params.id });
@@ -41,6 +44,7 @@ exports.getAllTransportationsByUserId = async (req, res) => {
   }
 };
 
+//Get Transportation by ID
 exports.getTransportationById = async (req, res) => {
   try {
     const transportation = await Transportation.findById(req.params.id);
@@ -51,6 +55,7 @@ exports.getTransportationById = async (req, res) => {
   }
 };
 
+//search Transportation by name
 exports.searchTransportationsByName = async (req, res) => {
   try {
     const transportation = await Transportation.find({ name: { $regex: `${req.body.name}` } });
@@ -61,6 +66,7 @@ exports.searchTransportationsByName = async (req, res) => {
   }
 };
 
+//search Transportation by name and ID
 exports.searchTransportationsByNameAndUserId = async (req, res) => {
   try {
     const transportation = await Transportation.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
@@ -71,6 +77,7 @@ exports.searchTransportationsByNameAndUserId = async (req, res) => {
   }
 };
 
+//Upadate Transportation by ID
 exports.updateTransportationById = async (req, res) => {
   try {
     const transportation = await Transportation.findByIdAndUpdate(req.params.id, req.body);
@@ -80,6 +87,7 @@ exports.updateTransportationById = async (req, res) => {
   }
 };
 
+//Upadate Transportation status by ID
 exports.updateTransportationStatusById = async (req, res) => {
   try {
     const transportation = await Transportation.findByIdAndUpdate(req.params.id, req.body);

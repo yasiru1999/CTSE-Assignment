@@ -104,7 +104,7 @@ function EditTranportation({ navigation, route }) {
           <Input placeholder={"Enter Report Destination"} onChangeText={value => setDestination(value)} value={destination}/>
         </InputView>
         <InputView>
-          <Title>Travel Dates</Title>
+          <Title>Contact Number</Title>
           <Input placeholder={"Enter Report Travel Dates"} onChangeText={value => setTravelDates(value)} value={travelDates}/>
         </InputView>
         <InputView>
@@ -112,7 +112,7 @@ function EditTranportation({ navigation, route }) {
           <Input placeholder={"Enter Report Type Of Transportation"} onChangeText={value => setTypeOfTransportation(value)} value={typeOfTransportation} />
         </InputView>
         <InputView>
-          <Title>Travel Class</Title>
+          <Title>Fee</Title>
           <Input placeholder={"Enter Report Description"} onChangeText={value => setTravelClass(value)} value={travelClass}/>
         </InputView>
         <InputView>

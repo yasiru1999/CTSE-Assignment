@@ -9,6 +9,7 @@ const { addTransportation,
         updateTransportationById,
         updateTransportationStatusById } = require("../Controller/transportation");
 
+//All the Routes for the controllers
 router.post('/addTransportation', addTransportation);
 router.delete('/deleteTransportationById/:id', deleteTransportationById);
 router.get('/getAllTransportations', getAllTransportations);

@@ -6,6 +6,7 @@ export const InputView = styled.View`
   margin-top: 20px;
 `;
 
+
 export const Input = styled.TextInput`
   flex:1 ;
   border: 1px;
@@ -14,6 +15,7 @@ export const Input = styled.TextInput`
   border-radius: 5px;
   margin-top: 3px;
 `;
+
 
 export const TextArea = styled.TextInput`
   border: 1px;
