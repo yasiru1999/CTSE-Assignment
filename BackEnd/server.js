@@ -18,7 +18,7 @@ const EventRouter = require("./Routers/event");
 app.use(cors());
 app.use(express.json());
 
-//! connect to mongoDB
+// connect to mongoDB
 mongoose.connect(URL, (err) => {
   if (err) throw err;
   console.log("connected to MongoDB");
@@ -29,7 +29,8 @@ app.use("/api/trip", tripRouter); //trip
 app.use("/api/transportation", transportationRouter);
 app.use("/api/accommodations", AccommodationRouter); //Accommodations
 app.use("/api/event", EventRouter);
-//! create server with port number
+
+// create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
   console.log(`service is up and running on port ${PORT}`);
 });
