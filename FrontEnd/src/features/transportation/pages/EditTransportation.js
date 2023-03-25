@@ -21,7 +21,7 @@ function EditTranportation({ navigation, route }) {
   const [Image, setImage] = useState('');
   const [accId, setaccId] = useState('');
 
-
+//get form detauls fron the ID
   const handleFetchReportById = async () => {
     try {
       const res = await GET(`api/transportation/getTransportationById/${route.params.id}`);
@@ -40,6 +40,7 @@ function EditTranportation({ navigation, route }) {
     }
   }
 
+  
   const handleUpdateData = async () => {
 
     if (title === '') {
