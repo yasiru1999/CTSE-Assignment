@@ -40,7 +40,7 @@ function EditTranportation({ navigation, route }) {
     }
   }
 
-  
+  //handle form validation
   const handleUpdateData = async () => {
 
     if (title === '') {
