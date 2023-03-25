@@ -25,8 +25,6 @@ export const PageTitle = styled.Text`
   font-weight: 700;
 `;
 
-
-
 export const SearchView = styled.View`
   width: 100%;
   display: flex;
