@@ -8,16 +8,10 @@ const URL = process.env.MONGODB_URL;
 const cors = require("cors");
 
 const userRouter = require("./Routers/user");
-
+const tripRouter = require("./Routers/trip");
 const EventRouter = require("./Routers/event");
 
-const tripRouter = require("./Routers/trip");
-const transportationRouter = require("./Routers/transportation");
-const AccommodationRouter = require('./Routers/accommodationRoute');
 
-const tripRouter = require("./Routers/trip");
-const transportationRouter = require("./Routers/transportation");
-const AccommodationRouter = require('./Routers/accommodationRoute');
 
 app.use(cors());
 app.use(express.json());
@@ -25,17 +19,12 @@ app.use(express.json());
 //! connect to mongoDB
 mongoose.connect(URL, (err) => {
   if (err) throw err;
-  console.log("connected  MongoDB");
+  console.log("connected to MongoDB");
 });
 
 app.use("/api/user", userRouter); //user login & Registration
-
-app.use("/api/event", EventRouter);
-
 app.use("/api/trip", tripRouter); //trip
-app.use("/api/transportation", transportationRouter);
-app.use("/api/accommodations", AccommodationRouter); 
-
+app.use("/api/trip", tripRouter); //trip
 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
