@@ -34,6 +34,7 @@ function AddTransportation({ navigation }) {
     }
   }
 
+  //handle form validation
   const handleSubmitData = async () => {
 
     if (title === '') {
@@ -86,7 +87,7 @@ function AddTransportation({ navigation }) {
         <IconView></IconView>
       </TopNav>
       <ScrollView style={{ marginBottom: "20%" }}>
-        
+
         <InputView>
           <Title>Title</Title>
           <Input placeholder={"Enter Title"} onChangeText={value => setTitle(value)} />
