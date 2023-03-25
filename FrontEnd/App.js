@@ -19,12 +19,11 @@ import AddTransportation from "./src/features/transportation/pages/AddTransporta
 import Tranportation from "./src/features/transportation/pages/Transportation";
 import EditTranportation from "./src/features/transportation/pages/EditTransportation";
 import AllTranportation from "./src/features/transportation/pages/AllTransportation";
+
 import EventAdd from "./src/features/event/pages/EventAdd";
 import AllEvent from "./src/features/event/pages/AllEvent";
 import MyEvent from "./src/features/event/pages/MyEvent";
 import EventEdit from "./src/features/event/pages/EventEdit";
-
-
 
 
 
@@ -57,11 +56,13 @@ export default function App() {
         <Stack.Screen name="TripUserView" component={TripUserView} />
 
 
+
       
         <Stack.Screen name="addevent" component={EventAdd} />
         <Stack.Screen name="allevent" component={AllEvent} />
         <Stack.Screen name="myevent" component={MyEvent} />
         <Stack.Screen name="editevent" component={EventEdit} />
+
 
 
 

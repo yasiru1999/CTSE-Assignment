@@ -2,7 +2,8 @@ export const HomeDetails = [
     {
         title: " Travel Itinerary",
         image: require("../../assets/trip.png"),
-        screen: "MarianResourcesHome",
+
+        screen: "TripHome",
         color: "#fff",
         
         
@@ -16,14 +17,18 @@ export const HomeDetails = [
     {
         title: "Travel Transportation",
         image: require("../../assets/travel.png"),
-        screen: "allpost",
+
+
+        screen: "tranportation",
+
         color: "#fff",
 
     },
     {
         title: "Travel Accommodation",
         image: require("../../assets/acco.png"),
-        screen: "Reports",
+
+        screen: "Accommodations",
         color: "#fff",
 
     },
@@ -44,7 +49,8 @@ export const SideBarDetails = [
     {
         title: "Itinerary Management",
         image: require("../../assets/i1.png"),
-        screen: "MyMarianResources",
+
+        screen: "MyTrips",
     },
     {
         title: "Events Management",
@@ -54,12 +60,16 @@ export const SideBarDetails = [
     {
         title: "Transport Management",
         image: require("../../assets/i3.png"),
-        screen: "mypost",
+
+        screen: "AllTranportation",
+       
+
     },
     {
         title: "Accommodation Management",
         image: require("../../assets/i4.png"),
-        screen: "MyReports",
+
+        screen: "MyAccommodations",
     },
 ]
 
@@ -67,7 +77,8 @@ export const BottomNavigationDetails = [
     {
         title: "Resources",
         image: require("../../assets/i1.png"),
-        screen: "MarianResourcesHome",
+
+        screen: "TripHome",
     },
     
     {
@@ -83,11 +94,15 @@ export const BottomNavigationDetails = [
     {
         title: "Community",
         image: require("../../assets/i3.png"),
-        screen: "allpost",
+
+        screen: "tranportation",
+       
     },
     {
         title: "Report",
         image: require("../../assets/i4.png"),
-        screen: "Reports",
+
+        screen: "Accommodations",
+
     },
 ]
