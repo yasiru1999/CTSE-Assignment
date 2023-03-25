@@ -10,6 +10,7 @@ exports.addAccommodations = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Accommodation Creating Failed." });
   }
 };
+
 //delete specific Accommodation
 exports.deleteAccommodationById = async (req, res) => {
   try {
@@ -19,6 +20,7 @@ exports.deleteAccommodationById = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Delete Failed" });
   }
 };
+
 //get all accommodation data
 exports.getAllAccommodations = async (req, res) => {
   try {
@@ -30,6 +32,7 @@ exports.getAllAccommodations = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
   }
 };
+
 //get all accommodation which filter for logged user
 exports.getAllAccommodationsByUserId = async (req, res) => {
   try {
@@ -41,6 +44,7 @@ exports.getAllAccommodationsByUserId = async (req, res) => {
   }
 };
 
+
 exports.getAccommodationById = async (req, res) => {
   try {
     const accommodation = await Accommodations.findById(req.params.id);
@@ -51,14 +55,7 @@ exports.getAccommodationById = async (req, res) => {
   }
 };
 
-// exports.searchAccommodationsByName = async (req, res) => {
-//   try {
-//     const acc = await Accommodations.find({ name: { $regex: `${req.params.name}` }  });
-//     res.send({ message: "success", acc });
-//   } catch (err) {
-//     res.status(400).send(err);
-//   }
-// };
+
 exports.searchAccommodationsByName = async (req, res) => {
   try {
     const reports = await Accommodations.find({ name: { $regex: `${req.body.name}` } });
@@ -69,15 +66,7 @@ exports.searchAccommodationsByName = async (req, res) => {
   }
 };
 
-// exports.searchAccommodationsByNameAndUserId = async (req, res) => {
-//   try {
-//     const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
-//     if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
-//     res.status(200).json({ status: true, data: accommodations, message: "Data not Fetched Successfully" });
-//   } catch (err) {
-//     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
-//   }
-// };
+
 exports.searchAccommodationsByNameAndUserId = async (req, res) => {
   try {
     const reports = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
@@ -88,6 +77,7 @@ exports.searchAccommodationsByNameAndUserId = async (req, res) => {
   }
 };
 
+
 exports.updateAccommodationById = async (req, res) => {
   try {
     const accommodation = await Accommodations.findByIdAndUpdate(req.params.id, req.body);
@@ -96,6 +86,7 @@ exports.updateAccommodationById = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Update Failed" });
   }
 };
+
 
 exports.updateAccommodationStatusById = async (req, res) => {
   try {

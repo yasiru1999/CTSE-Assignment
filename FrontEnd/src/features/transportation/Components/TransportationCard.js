@@ -22,10 +22,10 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
       </Location>
       <Location>
         <Icon name="timer" size={20} color="#42a1f5" />
-        {data.date}
+        {data.travelDates}
       </Location>
       <Text style={{ marginBottom: 10 }}>
-        {data.typeOfTransportation}
+        Type of transportaion - {data.typeOfTransportation} | Fee - {data.travelClass}
       </Text>
       {isOwner && <ButtonView>
         <View style={{ width: "50%" }}>
