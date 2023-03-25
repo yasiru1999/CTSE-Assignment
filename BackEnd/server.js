@@ -8,7 +8,6 @@ const URL = process.env.MONGODB_URL;
 const cors = require("cors");
 
 const userRouter = require("./Routers/user");
-const EventRouter = require("./Routers/event");
 const tripRouter = require("./Routers/trip");
 
 
@@ -19,13 +18,11 @@ app.use(express.json());
 //! connect to mongoDB
 mongoose.connect(URL, (err) => {
   if (err) throw err;
-  console.log("connected  MongoDB");
+  console.log("connected to MongoDB");
 });
 
 app.use("/api/user", userRouter); //user login & Registration
-app.use("/api/event", EventRouter);
 app.use("/api/trip", tripRouter); //trip
-
 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
