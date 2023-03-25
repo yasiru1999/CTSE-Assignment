@@ -1,5 +1,4 @@
 export const TokenExpired = () => {
-    localStorage.clear();
-    window.location = "/";
-  };
-  
+  localStorage.clear();
+  window.location = "/";
+};
