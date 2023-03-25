@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, Button, Alert, Pressable, Image } from "react-native";
 import { useState } from "react";
 import { POST } from "../../helpers/httphelper";
-import { Back2, ContentWrapper, LogoImage, LogoImage2, LogoWrapper } from "../community/styles/all";
+import { Back2, ContentWrapper, LogoImage, LogoImage2, LogoWrapper } from "./styles/all";
 
 function Register({ navigation }) {
   const [fname, setFname] = useState("");

@@ -4,10 +4,10 @@ import { StyleSheet, Text, View, TextInput, Button, Alert, Pressable, Image } fr
 import { POST } from "../../helpers/httphelper";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LoginImageContainer } from './Login.style';
-import { Back2, ContentWrapper, LogoImage, LogoWrapper } from "../community/styles/all";
+import { Back2, ContentWrapper, LogoImage, LogoWrapper } from "./styles/all";
 
 const Login = ({ navigation }) => {
-  const [email, setEmail] = useState("nethini@gmail.com");
+  const [email, setEmail] = useState("nethmi@gmail.com");
   const [password, setPassword] = useState("1234");
 
   const storeData = async (value) => {
@@ -29,7 +29,7 @@ const Login = ({ navigation }) => {
         if (res.message === "Login successful") {
           Alert.alert("Success login Success", res.message);
           storeData(res.user._id);
-          navigation.navigate("Home");
+          navigation.navigate("HomeWelcome");
         } else if (res.message === "Wrong password") {
           Alert.alert("Password Wrong", res.message);
         } else if (res.message === "User does not exist") {
