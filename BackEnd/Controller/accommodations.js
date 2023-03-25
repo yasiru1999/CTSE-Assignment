@@ -10,7 +10,7 @@ exports.addAccommodations = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Accommodation Creating Failed." });
   }
 };
-
+//delete specific Accommodation
 exports.deleteAccommodationById = async (req, res) => {
   try {
     const accommodation = await Accommodations.findByIdAndDelete(req.params.id);
@@ -19,7 +19,7 @@ exports.deleteAccommodationById = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Delete Failed" });
   }
 };
-
+//get all accommodation data
 exports.getAllAccommodations = async (req, res) => {
   try {
     const accommodations = await Accommodations.find();
@@ -30,7 +30,7 @@ exports.getAllAccommodations = async (req, res) => {
     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
   }
 };
-
+//get all accommodation which filter for logged user
 exports.getAllAccommodationsByUserId = async (req, res) => {
   try {
     const accommodations = await Accommodations.find({ user: req.params.id });
