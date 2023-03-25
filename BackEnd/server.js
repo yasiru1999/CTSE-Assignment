@@ -8,9 +8,9 @@ const URL = process.env.MONGODB_URL;
 const cors = require("cors");
 
 const userRouter = require("./Routers/user");
-
 const tripRouter = require("./Routers/trip");
 const AccommodationRouter = require('./Routers/accommodationRoute');
+
 
 
 
@@ -26,7 +26,6 @@ mongoose.connect(URL, (err) => {
 app.use("/api/user", userRouter); //user login & Registration
 app.use("/api/trip", tripRouter); //trip
 app.use("/api/accommodations", AccommodationRouter); //Accommodations
-
 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
