@@ -16,6 +16,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
           uri: data.Image
         }}
       />
+      
       <Location>
         <Icon name="location" size={20} color="#42a1f5" />
         Start - {data.origin} | Destination - {data.destination}
@@ -25,8 +26,9 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
         {data.date}
       </Location>
       <Text style={{ marginBottom: 10 }}>
-        {data.typeOfTransportation}
+        Transportation Type - {data.typeOfTransportation} | Travel class - {data.travelClass}
       </Text>
+
       {isOwner && <ButtonView>
         <View style={{ width: "50%" }}>
           <Button
@@ -50,6 +52,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
             onPress={() => navigation.navigate('Edittranportation', { id: data._id })}
           />
         </View>
+
         <View style={{ width: "50%", margin: 10 }}>
           <Button
             icon={
@@ -60,6 +63,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
                 iconStyle={{ marginRight: 10 }}
               />
             }
+          
             buttonStyle={{
               width: "100%",
               backgroundColor: "red",

@@ -8,6 +8,7 @@ export const TopNav = styled.View`
   justify-content: space-between;
 `;
 
+
 export const Container = styled.View`
   width: 100%;
   height: 100%;
@@ -15,15 +16,18 @@ export const Container = styled.View`
   align-items:center;
 `;
 
+
 export const PageTitle = styled.Text`
   margin-top: 30px;
   font-size: 32px;
   font-weight: 700;
 `;
 
+
 export const IconView = styled.View`
   margin-top: 38px;
 `;
+
 
 export const SearchView = styled.View`
   width: 100%;
