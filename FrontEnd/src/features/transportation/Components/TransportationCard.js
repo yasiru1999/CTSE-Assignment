@@ -23,7 +23,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
       </Location>
       <Location>
         <Icon name="timer" size={20} color="#42a1f5" />
-        {data.date}
+        {data.travelDates}
       </Location>
       <Text style={{ marginBottom: 10 }}>
         Transportation Type - {data.typeOfTransportation} | Travel class - {data.travelClass}

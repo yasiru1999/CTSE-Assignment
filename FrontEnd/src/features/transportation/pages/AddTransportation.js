@@ -115,7 +115,7 @@ function AddTransportation({ navigation }) {
         </InputView>
 
         <InputView>
-          <Title>Travel Class</Title>
+          <Title>Fee</Title>
           <Input placeholder={"Enter Description"} onChangeText={value => setTravelClass(value)}  />
         </InputView>
 

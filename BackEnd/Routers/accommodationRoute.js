@@ -16,8 +16,6 @@ router.get('/get/user/:id', getAllAccommodationsByUserId);
 router.get('/get/report/:id', getAccommodationById);
 router.put('/update/report/:id', updateAccommodationById);
 router.put('/update/status/:id', updateAccommodationStatusById);
-// router.post("/search/:name", searchAccommodationsByName);
-// router.post('/search/user', searchAccommodationsByNameAndUserId);
 router.post('/search', searchAccommodationsByName);
 router.post('/search/user', searchAccommodationsByNameAndUserId);
 module.exports = router;
