@@ -7,8 +7,7 @@ const PORT = process.env.PORT || 8000;
 const URL = process.env.MONGODB_URL;
 const cors = require("cors");
 
-const userRouter = require("./Routers/user");
-const tripRouter = require("./Routers/trip");
+
 const EventRouter = require("./Routers/event");
 
 
