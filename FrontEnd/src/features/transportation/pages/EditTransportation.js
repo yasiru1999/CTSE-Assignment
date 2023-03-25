@@ -60,6 +60,7 @@ function EditTranportation({ navigation, route }) {
       return
     }
 
+    //update form details
     const ob = {
       user,
       title,
