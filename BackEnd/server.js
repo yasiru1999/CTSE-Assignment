@@ -10,7 +10,9 @@ const cors = require("cors");
 const userRouter = require("./Routers/user");
 const EventRouter = require("./Routers/event");
 
-
+const tripRouter = require("./Routers/trip");
+const transportationRouter = require("./Routers/transportation");
+const AccommodationRouter = require('./Routers/accommodationRoute');
 
 app.use(cors());
 app.use(express.json());
