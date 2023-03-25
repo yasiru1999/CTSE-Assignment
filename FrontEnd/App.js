@@ -22,6 +22,7 @@ import AllTranportation from "./src/features/transportation/pages/AllTransportat
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
