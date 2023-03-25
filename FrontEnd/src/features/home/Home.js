@@ -5,7 +5,7 @@ function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
-                Here We Go ..
+                Here We Go ..🚶‍♂️
             </Text>
             <ScrollView
                 showsVerticalScrollIndicator={false}

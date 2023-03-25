@@ -22,6 +22,7 @@ export const HomeDetails = [
     {
         title: "Travel Accommodation",
         image: require("../../assets/acco.png"),
+        screen: "Accommodations",
         color: "#fff",
 
     },
@@ -58,7 +59,7 @@ export const SideBarDetails = [
     {
         title: "Accommodation Management",
         image: require("../../assets/i4.png"),
-       
+        screen: "MyAccommodations",
     },
 ]
 
@@ -88,6 +89,7 @@ export const BottomNavigationDetails = [
     {
         title: "Report",
         image: require("../../assets/i4.png"),
-        
+        screen: "Accommodations",
+
     },
 ]
