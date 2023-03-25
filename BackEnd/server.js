@@ -9,6 +9,7 @@ const cors = require("cors");
 
 const userRouter = require("./Routers/user");
 const tripRouter = require("./Routers/trip");
+const EventRouter = require("./Routers/event");
 
 
 
@@ -22,6 +23,7 @@ mongoose.connect(URL, (err) => {
 });
 
 app.use("/api/user", userRouter); //user login & Registration
+app.use("/api/trip", tripRouter); //trip
 app.use("/api/trip", tripRouter); //trip
 
 //! create server with port number
