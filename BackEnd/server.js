@@ -19,7 +19,7 @@ app.use(express.json());
 //! connect to mongoDB
 mongoose.connect(URL, (err) => {
   if (err) throw err;
-  console.log("connected to MongoDB");
+  console.log("connected MongoDB");
 });
 
 app.use("/api/user", userRouter); //user login & Registration
