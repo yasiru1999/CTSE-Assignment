@@ -51,21 +51,38 @@ exports.getAccommodationById = async (req, res) => {
   }
 };
 
+// exports.searchAccommodationsByName = async (req, res) => {
+//   try {
+//     const acc = await Accommodations.find({ name: { $regex: `${req.params.name}` }  });
+//     res.send({ message: "success", acc });
+//   } catch (err) {
+//     res.status(400).send(err);
+//   }
+// };
 exports.searchAccommodationsByName = async (req, res) => {
   try {
-    const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` } });
-    if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
-    res.status(200).json({ status: true, data: accommodations, message: "Data Fetched Successfully" });
+    const reports = await Accommodations.find({ name: { $regex: `${req.body.name}` } });
+    if (!reports) res.status(200).json({ status: false, message: "No Data Found" });
+    res.status(200).json({ status: true, data: reports, message: "Data Fetched Successfully" });
   } catch (err) {
     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
   }
 };
 
+// exports.searchAccommodationsByNameAndUserId = async (req, res) => {
+//   try {
+//     const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
+//     if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
+//     res.status(200).json({ status: true, data: accommodations, message: "Data not Fetched Successfully" });
+//   } catch (err) {
+//     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
+//   }
+// };
 exports.searchAccommodationsByNameAndUserId = async (req, res) => {
   try {
-    const accommodations = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
-    if (!accommodations) res.status(200).json({ status: false, message: "No Data Found" });
-    res.status(200).json({ status: true, data: accommodations, message: "Data not Fetched Successfully" });
+    const reports = await Accommodations.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
+    if (!reports) res.status(200).json({ status: false, message: "No Data Found" });
+    res.status(200).json({ status: true, data: reports, message: "Data Fetched Successfully" });
   } catch (err) {
     res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
   }

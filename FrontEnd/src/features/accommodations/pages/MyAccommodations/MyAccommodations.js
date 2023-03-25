@@ -61,11 +61,12 @@ function MyAccommodations({ navigation }) {
         }
         const res = await POST('api/accommodations/search/user', ob);
         setReports(res.data);
+        console.log(res)
       }
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     handleGetUserId();
@@ -91,12 +92,20 @@ function MyAccommodations({ navigation }) {
           <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("CreateAccomadation")} />
         </IconView>
       </TopNav>
-      <SearchView>
+      {/* <SearchView>
         <Searchbar
           placeholder="Search"
           onChangeText={(query) => setSearchQuery(query)}
           value={searchQuery}
           style={{ width: "90%" }}
+        />
+      </SearchView> */}
+      <SearchView>
+        <Searchbar
+          placeholder="Search"
+          style={{ width: "90%" }}
+          onChangeText={(query) => setSearchQuery(query)}
+          value={searchQuery}
         />
       </SearchView>
       <ScrollView style={{ marginBottom: "20%" }}>

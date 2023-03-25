@@ -25,7 +25,7 @@ mongoose.connect(URL, (err) => {
 
 app.use("/api/user", userRouter); //user login & Registration
 app.use("/api/trip", tripRouter); //trip
-app.use('/api/accommodations', AccommodationRouter); //Accommodations
+app.use("/api/accommodations", AccommodationRouter); //Accommodations
 
 
 //! create server with port number

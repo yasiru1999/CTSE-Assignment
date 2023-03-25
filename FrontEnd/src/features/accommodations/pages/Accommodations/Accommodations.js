@@ -23,21 +23,22 @@ function Accommodations({ navigation }) {
   }
 
   const handleSearchByName = async () => {
+    
     try {
       if (searchQuery === '') {
         handleFetchAllAccommodations();
       } else {
         let ob = {
-          title: searchQuery
+          name: searchQuery
         }
-        const res = await POST('api/accommodations/search', ob);
+        const res = await POST('api/accommodations/search',ob);
         setAccommodations(res.data);
         console.log(res)
       }
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     handleFetchAllAccommodations();
