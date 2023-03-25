@@ -12,6 +12,7 @@ export const HomeDetails = [
         image: require("../../assets/eve.png"),
         color: "#fff",
     },
+    //add transportaion page route
     {
         title: "Travel Transportation",
         image: require("../../assets/travel.png"),
@@ -50,6 +51,7 @@ export const SideBarDetails = [
         image: require("../../assets/i2.png"),
         
     },
+       //add All transportaion page route
     {
         title: "Transport Management",
         image: require("../../assets/i3.png"),
@@ -80,6 +82,7 @@ export const BottomNavigationDetails = [
         image: require("../../assets/logo.png"),
         screen: "Home",
     },
+       //add transportaion page route
     {
         title: "Community",
         image: require("../../assets/i3.png"),
