@@ -98,8 +98,8 @@ function AddTransportation({ navigation }) {
           <Input placeholder={"Enter Destination"} onChangeText={value => setDestination(value)} />
         </InputView>
         <InputView>
-          <Title>Travel Dates</Title>
-          <Input placeholder={"Enter Travel Dates"} onChangeText={value => setTravelDates(value)}  />
+          <Title>Contact number</Title>
+          <Input placeholder={"Enter contact number"} onChangeText={value => setTravelDates(value)}  />
         </InputView>
         <InputView>
           <Title>Type Of Transportation</Title>

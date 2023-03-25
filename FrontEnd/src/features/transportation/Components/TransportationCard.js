@@ -25,7 +25,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
         {data.date}
       </Location>
       <Text style={{ marginBottom: 10 }}>
-        {data.typeOfTransportation}
+        Transportation Type - {data.typeOfTransportation} | Travel class - {data.travelClass}
       </Text>
       {isOwner && <ButtonView>
         <View style={{ width: "50%" }}>
