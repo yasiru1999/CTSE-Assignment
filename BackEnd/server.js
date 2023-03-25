@@ -9,7 +9,9 @@ const cors = require("cors");
 
 const userRouter = require("./Routers/user");
 const tripRouter = require("./Routers/trip");
-const EventRouter = require("./Routers/event");
+const transportationRouter = require("./Routers/transportation");
+const AccommodationRouter = require('./Routers/accommodationRoute');
+
 
 
 
@@ -24,7 +26,8 @@ mongoose.connect(URL, (err) => {
 
 app.use("/api/user", userRouter); //user login & Registration
 app.use("/api/trip", tripRouter); //trip
-app.use("/api/trip", tripRouter); //trip
+app.use("/api/transportation", transportationRouter);
+app.use("/api/accommodations", AccommodationRouter); //Accommodations
 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
