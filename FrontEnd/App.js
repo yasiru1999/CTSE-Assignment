@@ -12,6 +12,8 @@ import TripUserView from "./src/features/trip/TripUserView";
 import HomeWelcome from "./src/features/home/HomeWelcome";
 import AddTransportation from "./src/features/transportation/pages/AddTransportation";
 import Tranportation from "./src/features/transportation/pages/Transportation";
+import EditTranportation from "./src/features/transportation/pages/EditTransportation";
+import AllTranportation from "./src/features/transportation/pages/AllTransportation";
 
 
 
@@ -40,6 +42,8 @@ export default function App() {
         <Stack.Screen name="TripUserView" component={TripUserView} />
         <Stack.Screen name="Addtransportation" component={AddTransportation} />
         <Stack.Screen name="tranportation" component={Tranportation} />
+        <Stack.Screen name="AllTranportation" component={AllTranportation} />
+        <Stack.Screen name="Edittranportation" component={EditTranportation} />
       </Stack.Navigator>
     </NavigationContainer >
 

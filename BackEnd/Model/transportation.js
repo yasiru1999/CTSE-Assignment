@@ -22,16 +22,15 @@ const tranportationSchema = new Schema({
         type: String,
     },
     date: {
-        type: Date,
-        default: Date.now,
+        type: String,
     },
     Image: {
         type: String,
     },
-    uid: {
-        type: ObjectId,
-        ref: "User"
-    },
+    user: { 
+        type: ObjectId, 
+        ref: "User" 
+    }
 });
 
 const Tranportation = mongoose.model("Tranportation", tranportationSchema);

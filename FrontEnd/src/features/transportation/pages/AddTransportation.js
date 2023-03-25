@@ -19,7 +19,7 @@ function AddTransportation({ navigation }) {
   const [typeOfTransportation, setTypeOfTransportation] = useState('');
   const [travelClass, setTravelClass] = useState('');
   const [date, setDate] = useState('');
-  const [image, setImage] = useState('');
+  const [Image, setImage] = useState('');
 
 
   const handleGetUserId = async () => {
@@ -61,10 +61,10 @@ function AddTransportation({ navigation }) {
       typeOfTransportation,
       travelClass,
       date,
-      image,
+      Image,
     }
     console.log(ob);
-    const res = await POST('/api/transportation/addTransportation', ob);
+    const res = await POST('api/transportation/addTransportation', ob);
     alert(res.message);
     navigation.navigate("tranportation");
   }
@@ -87,7 +87,7 @@ function AddTransportation({ navigation }) {
       <ScrollView style={{ marginBottom: "20%" }}>
         <InputView>
           <Title>Title</Title>
-          <Input placeholder={"Enter Report Title"} onChangeText={value => setTitle(value)} />
+          <Input placeholder={"Enter Title"} onChangeText={value => setTitle(value)} />
         </InputView>
         <InputView>
           <Title>Origin</Title>
@@ -95,23 +95,23 @@ function AddTransportation({ navigation }) {
         </InputView>
         <InputView>
           <Title>Destination</Title>
-          <TextArea placeholder={"Enter Report Destination"} onChangeText={value => setDestination(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <Input placeholder={"Enter Destination"} onChangeText={value => setDestination(value)} />
         </InputView>
         <InputView>
           <Title>Travel Dates</Title>
-          <TextArea placeholder={"Enter Report Travel Dates"} onChangeText={value => setTravelDates(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <Input placeholder={"Enter Travel Dates"} onChangeText={value => setTravelDates(value)}  />
         </InputView>
         <InputView>
           <Title>Type Of Transportation</Title>
-          <TextArea placeholder={"Enter Report Type Of Transportation"} onChangeText={value => setTypeOfTransportation(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <Input placeholder={"Enter Type Of Transportation"} onChangeText={value => setTypeOfTransportation(value)}  />
         </InputView>
         <InputView>
           <Title>Travel Class</Title>
-          <TextArea placeholder={"Enter Report Description"} onChangeText={value => setTypeOfTransportation(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <Input placeholder={"Enter Description"} onChangeText={value => setTravelClass(value)}  />
         </InputView>
         <InputView>
           <Title>Date</Title>
-          <TextArea placeholder={"Enter Report Date"} onChangeText={value => setDate(value)} multiline={true} numberOfLines={10} textAlignVertical="top" />
+          <Input placeholder={"Enter Date"} onChangeText={value => setDate(value)} />
         </InputView>
         <InputView>
           <Title>Image</Title>
@@ -120,7 +120,7 @@ function AddTransportation({ navigation }) {
 
         <Caution>
           <Icon name="exclamation-circle" size={16} color="#42a1f5" />
-          By Clicking Create You Agree to take full resposibility for this report and are under the privacy & policy of this and government law.
+          By Clicking Create You Agree to take full resposibility for this details and are under the privacy & policy of this and government law.
         </Caution>
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Button title="Create" color="#42a1f5" onPress={() => { handleSubmitData() }} />

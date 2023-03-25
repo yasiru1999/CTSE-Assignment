@@ -13,19 +13,19 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
       <Card.Image
         style={{ padding: 0 }}
         source={{
-          uri: data.image
+          uri: data.Image
         }}
       />
       <Location>
         <Icon name="location" size={20} color="#42a1f5" />
-        {data.location}
+        Start - {data.origin} | Destination - {data.destination}
       </Location>
       <Location>
         <Icon name="timer" size={20} color="#42a1f5" />
         {data.date}
       </Location>
       <Text style={{ marginBottom: 10 }}>
-        {data.description}
+        {data.typeOfTransportation}
       </Text>
       {isOwner && <ButtonView>
         <View style={{ width: "50%" }}>
@@ -47,7 +47,7 @@ function TransportationCard({ data, isOwner, deleteFunc, navigation }) {
               marginBottom: 0,
             }}
             title="Edit"
-            onPress={() => navigation.navigate('EditReport', { id: data._id })}
+            onPress={() => navigation.navigate('Edittranportation', { id: data._id })}
           />
         </View>
         <View style={{ width: "50%", margin: 10 }}>

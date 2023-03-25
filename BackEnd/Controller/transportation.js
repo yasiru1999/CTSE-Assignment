@@ -1,90 +1,90 @@
 const Transportation = require('../Model/transportation');
 
-//add Transportation
+//add new Transportation
 exports.addTransportation = async (req, res) => {
-
-    const { title, origin, destination, travelDates, typeOfTransportation, travelClass, date, uid } = req.body;
-    console.log(req.body);
-    if (!title || !origin || !destination || !travelDatess) {
-        return res.status(400).json({ message: "Please enter all fields" });
-    }
-    const transportation = new Transportation({
-        title, 
-        origin, 
-        destination, 
-        travelDates, 
-        typeOfTransportation, 
-        travelClass, 
-        date, 
-        uid
-
-    });
-    try {
-        const savedTransportation = await transportation.save();
-        res.send({ message: "success", Transportation: savedTransportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
+  try {
+    const transportation = new Transportation(req.body);
+    await transportation.save();
+    res.status(201).json({ status: true, data: transportation, message: "Successfully Created" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Transportation Creating Failed." });
+  }
 };
 
-//get all Transportation
-exports.getTransportationDetails = async (req, res) => {
-    try {
-        const transportation = await Transportation.find();
-        res.send({ message: "success", transportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
+exports.deleteTransportationById = async (req, res) => {
+  try {
+    const transportation = await Transportation.findByIdAndDelete(req.params.id);
+    res.status(200).json({ status: true, data: transportation, message: "Successfully Deleted" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Delete Failed" });
+  }
 };
 
-//get one Transportation
-exports.getTransportation = async (req, res) => {
-    try {
-        const transportation = await Transportation.findById(req.params.id);
-        res.send({ message: "success", transportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
-}
+exports.getAllTransportations = async (req, res) => {
+  try {
+    const transportation = await Transportation.find();
+    if (!transportation) res.status(200).json({ status: false, message: "No Data Found" });
 
-//get all Transportation by object uid
-exports.getTransportationDetailsByUid = async (req, res) => {
-    try {
-        uid = req.body.uid;
-        if (!uid) {
-            return res.status(400).json({ message: "Please enter all fields" });
-        }
-        const transportation = await Transportation.find(
-            { uid: uid }
-        );
-        res.send({ message: "success", transportation: transportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
-}
+    res.status(200).json({ status: true, data: transportation, message: "Data Fetched Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
+  }
+};
 
-//update Transportation
-exports.updateTransportation = async (req, res) => {
-    try {
-        const transportation = await Transportation.findByIdAndUpdate(req.params.id, req.body);
-        res.send({ message: "success", transportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
-}
+exports.getAllTransportationsByUserId = async (req, res) => {
+  try {
+    const transportation = await Transportation.find({ user: req.params.id });
+    if (!transportation) res.status(200).json({ status: false, message: "No Data Found" });
+    res.status(200).json({ status: true, data: transportation, message: "Data Fetched Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
+  }
+};
 
-//delete transportation
-exports.deleteTransportation = async (req, res) => {
-    try {
-        const transportation = await Transportation.findByIdAndDelete(req.params.id);
-        res.send({ message: "success", transportation });
-    }
-    catch (err) {
-        res.status(400).send(err);
-    }
-}
+exports.getTransportationById = async (req, res) => {
+  try {
+    const transportation = await Transportation.findById(req.params.id);
+    if (!transportation) res.status(200).json({ status: false, message: "Data not Found" });
+    res.status(200).json({ status: true, data: transportation, message: "Data Fetched Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Data Fetch Failed" });
+  }
+};
+
+exports.searchTransportationsByName = async (req, res) => {
+  try {
+    const transportation = await Transportation.find({ name: { $regex: `${req.body.name}` } });
+    if (!transportation) res.status(200).json({ status: false, message: "No Data Found" });
+    res.status(200).json({ status: true, data: transportation, message: "Data Fetched Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
+  }
+};
+
+exports.searchTransportationsByNameAndUserId = async (req, res) => {
+  try {
+    const transportation = await Transportation.find({ name: { $regex: `${req.body.name}` }, user: req.body.user });
+    if (!transportation) res.status(200).json({ status: false, message: "No Data Found" });
+    res.status(200).json({ status: true, data: transportation, message: "Data not Fetched Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Data Fetch Failed." });
+  }
+};
+
+exports.updateTransportationById = async (req, res) => {
+  try {
+    const transportation = await Transportation.findByIdAndUpdate(req.params.id, req.body);
+    res.status(201).json({ status: true, data: transportation, message: "Successfully Updated" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "Update Failed" });
+  }
+};
+
+exports.updateTransportationStatusById = async (req, res) => {
+  try {
+    const transportation = await Transportation.findByIdAndUpdate(req.params.id, req.body);
+    res.status(201).json({ status: true, data: transportation, message: "Status Updated Successfully" });
+  } catch (err) {
+    res.status(500).json({ status: false, error: err, message: "accommodation Status update Failed" });
+  }
+};
