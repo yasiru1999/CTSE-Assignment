@@ -22,7 +22,7 @@ function AddTransportation({ navigation }) {
   const [date, setDate] = useState('');
   const [Image, setImage] = useState('');
 
-
+  //get User ID
   const handleGetUserId = async () => {
     try {
       const value = await AsyncStorage.getItem('uid');
