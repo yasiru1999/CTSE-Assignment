@@ -1,3 +1,4 @@
+
 import Login from "./src/features/user/Login";
 import Register from "./src/features/user/Register";
 import { NavigationContainer } from '@react-navigation/native';
@@ -19,7 +20,10 @@ import Tranportation from "./src/features/transportation/pages/Transportation";
 import EditTranportation from "./src/features/transportation/pages/EditTransportation";
 import AllTranportation from "./src/features/transportation/pages/AllTransportation";
 
-
+import EventAdd from "./src/features/event/pages/EventAdd";
+import AllEvent from "./src/features/event/pages/AllEvent";
+import MyEvent from "./src/features/event/pages/MyEvent";
+import EventEdit from "./src/features/event/pages/EventEdit";
 
 
 
@@ -50,6 +54,23 @@ export default function App() {
         <Stack.Screen name="TripEdit" component={TripEdit} />
         <Stack.Screen name="TripCreate" component={TripCreate} />
         <Stack.Screen name="TripUserView" component={TripUserView} />
+
+
+
+      
+        <Stack.Screen name="addevent" component={EventAdd} />
+        <Stack.Screen name="allevent" component={AllEvent} />
+        <Stack.Screen name="myevent" component={MyEvent} />
+        <Stack.Screen name="editevent" component={EventEdit} />
+
+
+
+
+
+
+
+
+
         <Stack.Screen name="Addtransportation" component={AddTransportation} />
         <Stack.Screen name="tranportation" component={Tranportation} />
         <Stack.Screen name="AllTranportation" component={AllTranportation} />
@@ -59,4 +80,3 @@ export default function App() {
 
   );
 }
-
