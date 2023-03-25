@@ -36,9 +36,6 @@ app.use("/api/trip", tripRouter); //trip
 app.use("/api/transportation", transportationRouter);
 app.use("/api/accommodations", AccommodationRouter); 
 
-app.use("/api/trip", tripRouter); //trip
-app.use("/api/transportation", transportationRouter);
-app.use("/api/accommodations", AccommodationRouter); //Accommodations
 
 //! create server with port number
 app.listen(process.env.PORT || "0.0.0.0", () => {
