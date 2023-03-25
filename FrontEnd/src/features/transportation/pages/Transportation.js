@@ -22,6 +22,7 @@ function Transportation({ navigation }) {
     }
   }
 
+
   const handleSearchByName = async () => {
     try {
       if (searchQuery === '') {
@@ -38,6 +39,7 @@ function Transportation({ navigation }) {
       console.log(err);
     }
   }
+
 
   useEffect(() => {
     handleFetchAllTransportation();
@@ -59,6 +61,7 @@ function Transportation({ navigation }) {
           <Icon name="plus-circle" size={32} color="#42a1f5" onPress={() => navigation.navigate("Addtransportation")} />
         </IconView>
       </TopNav>
+
       <SearchView>
         <Searchbar
           placeholder="Search"
@@ -67,6 +70,7 @@ function Transportation({ navigation }) {
           style={{ width: "90%" }}
         />
       </SearchView>
+
       <ScrollView style={{ marginBottom: "20%",width: "90%" }}>
         {transportation?.map((Transportation, index) => (
           <TransportationCard
@@ -77,6 +81,7 @@ function Transportation({ navigation }) {
           />
         ))}
       </ScrollView>
+      
       <NavigationBottomBar navigation={navigation} />
     </Container>
   )
