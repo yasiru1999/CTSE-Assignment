@@ -76,7 +76,7 @@ function AddTransportation({ navigation }) {
     handleGetUserId();
   }, []);
 
-
+//view of add transportation details
   return (
     <Container>
       <SideBar navigation={navigation} />
