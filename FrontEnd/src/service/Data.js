@@ -15,6 +15,7 @@ export const HomeDetails = [
     {
         title: "Travel Transportation",
         image: require("../../assets/travel.png"),
+        screen: "tranportation",
         color: "#fff",
 
     },
@@ -52,6 +53,7 @@ export const SideBarDetails = [
     {
         title: "Transport Management",
         image: require("../../assets/i3.png"),
+        screen: "AllTranportation",
        
     },
     {
@@ -81,6 +83,7 @@ export const BottomNavigationDetails = [
     {
         title: "Community",
         image: require("../../assets/i3.png"),
+        screen: "tranportation",
        
     },
     {
