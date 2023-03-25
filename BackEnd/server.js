@@ -11,11 +11,7 @@ const userRouter = require("./Routers/user");
 const tripRouter = require("./Routers/trip");
 const transportationRouter = require("./Routers/transportation");
 const AccommodationRouter = require('./Routers/accommodationRoute');
-<<<<<<< HEAD
 const EventRouter = require("./Routers/event");
-=======
-
->>>>>>> b51c4e28f49386735b8b23ce5eabb35bc8360751
 
 
 
