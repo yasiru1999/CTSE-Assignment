@@ -10,10 +10,10 @@ import TripEdit from "./src/features/trip/TripEdit";
 import TripCreate from "./src/features/trip/TripCreate";
 import TripUserView from "./src/features/trip/TripUserView";
 import HomeWelcome from "./src/features/home/HomeWelcome";
-import AddEvent from "./src/features/event/pages/AddEvent";
+import EventAdd from "./src/features/event/pages/EventAdd";
 import AllEvent from "./src/features/event/pages/AllEvent";
 import MyEvent from "./src/features/event/pages/MyEvent";
-import EditEvent from "./src/features/event/pages/EditEvent";
+import EventEdit from "./src/features/event/pages/EventEdit";
 
 
 
@@ -41,10 +41,10 @@ export default function App() {
         <Stack.Screen name="TripEdit" component={TripEdit} />
         <Stack.Screen name="TripCreate" component={TripCreate} />
         <Stack.Screen name="TripUserView" component={TripUserView} />
-        <Stack.Screen name="addevent" component={AddEvent} />
+        <Stack.Screen name="addevent" component={EventAdd} />
          <Stack.Screen name="allevent" component={AllEvent} />
         <Stack.Screen name="myevent" component={MyEvent} />
-         <Stack.Screen name="editevent" component={EditEvent} />
+         <Stack.Screen name="editevent" component={EventEdit} />
       </Stack.Navigator>
     </NavigationContainer >
 
